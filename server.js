@@ -26,9 +26,7 @@ let tables = [
     }
 ]
 
-let waitList = [
-    
-];
+let waitList = [];
 
 // route first to the AJAX home Page
 app.get("/", function (req, res) {
@@ -57,11 +55,15 @@ app.post("/api/tables", function(req, res) {
     var newReservation = req.body;
     newReservation.routeName = newReservation.customerID.replace(/\s+/g, "").toLowerCase();
     console.log(newReservation);
-    if (tables.length <= 5) {
+    console.log(tables.length);
+    if (tables.length < 5) {
         tables.push(newReservation);
+        res.json(newReservation);
+        console.log(tables.length);
     }
     else {
         waitList.push(newReservation);
+        res.json(newReservation);
     }
 });
 
