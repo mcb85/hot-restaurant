@@ -1,5 +1,3 @@
-
-
 $("#submit").on("click", function (event) {
     event.preventDefault();
     var newReservation = {
@@ -8,4 +6,23 @@ $("#submit").on("click", function (event) {
         email = $("#Email-input").val().trim(),
         uniqueId = $("#uniqueId-input").val().trim(),
     }
-})
+    $.post("/api/tables", newReservation,
+    function(data) {
+        if (data) {
+            alert("Adding Reservation");
+        } else {
+            alert("Sorry, you are wait-listed")
+        }
+    
+    $("#customerName-input").val("");
+    $("#phoneNumber-input").val("");
+    $("#Email-input").val("");
+    $("#uniqueId-input").val("");
+    });
+
+});
+            
+
+
+
+
