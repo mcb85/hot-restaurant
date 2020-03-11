@@ -10,7 +10,7 @@ let waitList = [];
 
 // route first to the AJAX home Page
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // route to the reservations page
