@@ -5,27 +5,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let tables = [
-    {
-        "customerName": "Omar Ibrahim",
-        "phoneNumber": "919-111-1111",
-        "customerEmail": "aibrahi3@ncsu.edu",
-        "customerID": "omar1"
-    },
-    {
-        "customerName": "Jonathan Handy",
-        "phoneNumber": "9195591806",
-        "customerEmail": "jhandy4@gmail.com",
-        "customerID": "3333"
-    },
-    {
-        "customerName": "Bob",
-        "phoneNumber": "123",
-        "customerEmail": "sadf@.com",
-        "customerID": "123456"
-    }
-]
-
+let tables = [];
 let waitList = [];
 
 // route first to the AJAX home Page
